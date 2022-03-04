@@ -4,12 +4,12 @@ import java.util.Collection;
 
 public class CustomObject implements ObjectInterface {
     private final int initialSize = 10;
-    private Object[] array = new Object[initialSize];
+    private Object array [] = new Object[initialSize];
     private int elementsInArray = 0;
 
     ////////////////////////
     @Override
-    public boolean add(CustomObject o) {
+    public boolean add(Object o) {
         if (elementsInArray == array.length - 1) {
             resize(array.length * 2);
         }
@@ -20,7 +20,7 @@ public class CustomObject implements ObjectInterface {
 
     /////////////////////////////
     @Override
-    public boolean add(int index, CustomObject o) {
+    public boolean add(int index, Object o) {
         if (array.length < index + 4) {
             resize(array.length + index + 4);
         }
@@ -61,7 +61,7 @@ public class CustomObject implements ObjectInterface {
     }
 
     @Override
-    public boolean contain(CustomObject o) {
+    public boolean contain(Object o) {
         for (int i = 0; i < array.length; i++) {
             if (array[i].equals(o)) {
                 return true;
@@ -73,6 +73,7 @@ public class CustomObject implements ObjectInterface {
 
     @Override
     public boolean equals(Collection str) {
+
         return false;
     }
 
